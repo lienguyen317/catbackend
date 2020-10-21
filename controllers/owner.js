@@ -25,7 +25,7 @@ router.put('/:ownerId/addCat/:catId', async (req, res)=>{
 
 
 router.delete("/:id", async (req, res) => {
-    res.json(await Owner.findByIdAndRemove(req.params.ownerid));
+    res.json(await Owner.findByIdAndRemove(req.params.id));
   });
 
 module.exports = router
