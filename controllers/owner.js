@@ -13,6 +13,11 @@ router.post('/', async (req, res) => {
     res.json({ status: 200, data: owner})
 })
 
+router.put("/:id", async (req, res)=>{
+    res.json(await Owner.findByIdAndUpdate(req.params.id, req.body, {new: true}))
+})
+
+
 router.put('/:ownerId/addCat/:catId', async (req, res)=>{
     console.log('owner - put', req.params)
     const cat = await Cat.findById(req.params.catId)
